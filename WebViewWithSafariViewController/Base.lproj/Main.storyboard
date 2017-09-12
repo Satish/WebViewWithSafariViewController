@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WebViewWithSafariViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Jdm-6s-kYF">
+                                <rect key="frame" x="0.0" y="50" width="375" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOb-Kf-Idf">
+                                        <rect key="frame" x="76.5" y="0.0" width="222" height="66.5"/>
+                                        <state key="normal" title="Open with Safari View Controller"/>
+                                        <connections>
+                                            <action selector="openWithSafariVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gzw-tm-Qoh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0D4-9t-NGX">
+                                        <rect key="frame" x="119" y="66.5" width="137" height="67"/>
+                                        <state key="normal" title="Open with WebView"/>
+                                        <connections>
+                                            <segue destination="oKw-zB-0ts" kind="show" id="lSM-nj-oJU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejT-gw-m1P">
+                                        <rect key="frame" x="139" y="133.5" width="97" height="66.5"/>
+                                        <state key="normal" title="Open in Safari"/>
+                                        <connections>
+                                            <action selector="openInSafari:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BfP-hb-pXV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="bai-4z-tqV"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Jdm-6s-kYF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SPD-xa-Iys"/>
+                            <constraint firstAttribute="trailing" secondItem="Jdm-6s-kYF" secondAttribute="trailing" id="dSA-AA-hhW"/>
+                            <constraint firstItem="Jdm-6s-kYF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="zEE-fu-cYP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="slx-gC-rTQ">
+            <objects>
+                <navigationController id="oKw-zB-0ts" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Eo-Y0-PAG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="nE1-5p-Lmh" kind="relationship" relationship="rootViewController" id="aGB-g4-PBP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Raa-1v-5Tt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="718" y="37"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="a0T-YX-exp">
+            <objects>
+                <viewController id="nE1-5p-Lmh" customClass="WebViewController" customModule="WebViewWithSafariViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HvO-Ia-MCw"/>
+                        <viewControllerLayoutGuide type="bottom" id="NKA-RC-qRy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QiV-jt-XMi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgn-c6-3IT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qgn-c6-3IT" firstAttribute="top" secondItem="QiV-jt-XMi" secondAttribute="top" id="4mS-VT-mEM"/>
+                            <constraint firstItem="NKA-RC-qRy" firstAttribute="top" secondItem="qgn-c6-3IT" secondAttribute="bottom" id="5g2-NP-JfD"/>
+                            <constraint firstAttribute="trailing" secondItem="qgn-c6-3IT" secondAttribute="trailing" id="Wsl-hH-Rb9"/>
+                            <constraint firstItem="qgn-c6-3IT" firstAttribute="leading" secondItem="QiV-jt-XMi" secondAttribute="leading" id="lPW-Mf-Fns"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bxp-tc-hhV">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="iff-Ax-eNo">
+                            <connections>
+                                <action selector="close:" destination="nE1-5p-Lmh" id="BvI-zM-AsG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="qgn-c6-3IT" id="WjG-0d-Yaq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u9R-AV-tRV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1453.5999999999999" y="34.632683658170919"/>
+        </scene>
+    </scenes>
+</document>
